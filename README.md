@@ -1,3 +1,18 @@
+## NGO - Cordova Activity 1
+ITCC 41 - MOBILE APPLICATION DEVELOPEMENT 
+
+
+
+## Steps Followed
+
+1. Installed Cordova via npm
+2. Created a Cordova project
+3. Added the Android platform
+4. Emulated the project using Android Studio
+
+
+
+
 ## Screenshot
 
 [![Screenshot](https://github.com/user-attachments/assets/0cc946fe-e3ab-40bd-926b-1b2981262727)](https://github.com/user-attachments/assets/0cc946fe-e3ab-40bd-926b-1b2981262727)
