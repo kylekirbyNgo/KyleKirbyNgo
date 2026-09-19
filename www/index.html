@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Student Profile</title>
 
   <style>
@@ -23,10 +22,6 @@
       color: white;
       padding: 20px 8%;
       text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
     }
 
     main {
@@ -50,16 +45,15 @@
     }
 
     .profile-picture {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #2563eb;
-    }
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #2563eb;
+}
+    
 
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       margin-top: 0;
     }
 
@@ -73,7 +67,6 @@
       color: #1e40af;
     }
 
-    /* SKILLS */
     .skills-list {
       display: flex;
       gap: 10px;
@@ -88,26 +81,6 @@
       font-weight: bold;
     }
 
-    /* PROJECTS */
-    .project {
-      background: #f8fafc;
-      border-left: 5px solid #2563eb;
-      padding: 16px;
-      margin-top: 15px;
-      border-radius: 8px;
-    }
-
-    .project h3 {
-      color: #1e40af;
-      margin-bottom: 8px;
-    }
-
-    .project p {
-      margin-bottom: 0;
-      line-height: 1.6;
-    }
-
-    /* BUTTONS */
     button {
       border: none;
       padding: 11px 18px;
@@ -117,14 +90,12 @@
       font-weight: bold;
     }
 
-    .edit-btn,
-    .save-btn {
+    .edit-btn, .save-btn {
       background: #2563eb;
       color: white;
     }
 
-    .edit-btn:hover,
-    .save-btn:hover {
+    .edit-btn:hover, .save-btn:hover {
       background: #1d4ed8;
     }
 
@@ -134,11 +105,6 @@
       margin-left: 8px;
     }
 
-    .cancel-btn:hover {
-      background: #d1d5db;
-    }
-
-    /* FORM */
     .hidden {
       display: none;
     }
@@ -150,8 +116,7 @@
       font-weight: bold;
     }
 
-    input,
-    textarea {
+    input, textarea {
       width: 100%;
       padding: 11px;
       border: 1px solid #cbd5e1;
@@ -177,691 +142,189 @@
       padding: 15px;
       color: #64748b;
     }
-
-    /* RESPONSIVE DESIGN */
-    @media (max-width: 768px) {
-      header {
-        padding: 18px 5%;
-      }
-
-      main {
-        width: 92%;
-        margin: 25px auto;
-      }
-
-      .card {
-        padding: 22px;
-      }
-
-      .profile-top {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .details {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 26px;
-      }
-
-      .card {
-        padding: 18px;
-      }
-
-      .profile-picture {
-        width: 100px;
-        height: 100px;
-      }
-
-      button {
-        width: 100%;
-        margin-top: 8px;
-      }
-
-      .cancel-btn {
-        margin-left: 0;
-      }
-    }
   </style>
 </head>
-
 <body>
 
-  <!-- HEADER -->
   <header>
     <h1>Student Profile</h1>
   </header>
 
-
   <main>
-
-    <!-- =========================
-         PROFILE VIEW
-         ========================= -->
+    <!-- PROFILE VIEW -->
     <section id="profileView">
-
-      <!-- PROFILE -->
       <div class="card">
-
         <div class="profile-top">
-
-          <img
-            src="img/ngo.jpg"
-            alt="Student Profile Picture"
-            class="profile-picture"
-          />
+        <img src="img/ngo.jpg" alt="Student Profile Picture" class="profile-picture">
 
           <div class="details">
-
-            <h2 id="displayName">
-              Your Name
-            </h2>
-
-            <p>
-              <span class="label">Course:</span>
-              <span id="displayCourse"></span>
-            </p>
-
-            <p>
-              <span class="label">Year Level:</span>
-              <span id="displayYear"></span>
-            </p>
-
+            <h2 id="displayName">Your Name</h2>
+            <p><span class="label">Course:</span> <span id="displayCourse"></span></p>
+            <p><span class="label">Year Level:</span> <span id="displayYear"></span></p>
           </div>
-
         </div>
 
         <br />
-
-        <button
-          class="edit-btn"
-          id="editButton"
-        >
-          Edit Profile
-        </button>
-
+        <button class="edit-btn" id="editButton">Edit Profile</button>
       </div>
 
-
-      <!-- ABOUT -->
       <div class="card">
-
         <h2>About</h2>
-
         <p id="displayAbout"></p>
-
       </div>
 
-
-      <!-- SKILLS -->
       <div class="card">
-
         <h2>Skills</h2>
-
-        <div
-          class="skills-list"
-          id="displaySkills"
-        ></div>
-
+        <div class="skills-list" id="displaySkills"></div>
       </div>
 
-
-      <!-- =========================
-           PROJECTS
-           ========================= -->
       <div class="card">
-
-        <h2>Projects</h2>
-
-        <div class="project">
-
-          <h3>Student Profile Application</h3>
-
-          <p>
-            A Cordova-based Student Profile application that
-            allows users to view and edit student information.
-            The application uses HTML, CSS, JavaScript, and
-            localStorage.
-          </p>
-
-        </div>
-
-
-        <div class="project">
-
-          <h3>Personal Portfolio</h3>
-
-          <p>
-            A responsive portfolio project showcasing my
-            skills, projects, personal information, and
-            interests in technology.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- CONTACT -->
-      <div class="card">
-
         <h2>Contact</h2>
-
-        <p>
-          <strong>Email:</strong>
-          student@email.com
-        </p>
-
-        <p>
-          <strong>Phone:</strong>
-          +63 912 345 6789
-        </p>
-
+        <p>Email: kylekirbyngo@email.com</p>
+        <p>Phone: +63 961 964 015</p>
       </div>
-
     </section>
 
-
-    <!-- =========================
-         EDIT PROFILE FORM
-         ========================= -->
-    <section
-      id="editView"
-      class="hidden"
-    >
-
+    <!-- EDIT PROFILE FORM -->
+    <section id="editView" class="hidden">
       <div class="card">
-
         <h2>Edit Profile</h2>
-
-        <p
-          id="errorMessage"
-          class="error-message hidden"
-        ></p>
-
+        <p id="errorMessage" class="error-message hidden"></p>
 
         <form id="profileForm">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" />
 
-          <!-- FULL NAME -->
-          <label for="fullName">
-            Full Name
-          </label>
+          <label for="course">Course</label>
+          <input type="text" id="course" />
 
-          <input
-            type="text"
-            id="fullName"
-          />
+          <label for="yearLevel">Year Level</label>
+          <input type="text" id="yearLevel" />
 
+          <label for="about">About Me</label>
+          <textarea id="about"></textarea>
 
-          <!-- COURSE -->
-          <label for="course">
-            Course
-          </label>
+          <label for="skills">Skills <small>(separate skills with commas)</small></label>
+          <input type="text" id="skills" placeholder="Example: HTML, CSS, JavaScript" />
 
-          <input
-            type="text"
-            id="course"
-          />
-
-
-          <!-- YEAR LEVEL -->
-          <label for="yearLevel">
-            Year Level
-          </label>
-
-          <input
-            type="text"
-            id="yearLevel"
-          />
-
-
-          <!-- ABOUT -->
-          <label for="about">
-            About Me
-          </label>
-
-          <textarea
-            id="about"
-          ></textarea>
-
-
-          <!-- SKILLS -->
-          <label for="skills">
-            Skills
-            <small>
-              (separate skills with commas)
-            </small>
-          </label>
-
-          <input
-            type="text"
-            id="skills"
-            placeholder="Example: HTML, CSS, JavaScript"
-          />
-
-
-          <br />
-          <br />
-
-
-          <!-- SAVE -->
-          <button
-            type="submit"
-            class="save-btn"
-          >
-            Save
-          </button>
-
-
-          <!-- CANCEL -->
-          <button
-            type="button"
-            class="cancel-btn"
-            id="cancelButton"
-          >
-            Cancel
-          </button>
-
+          <br /><br />
+          <button type="submit" class="save-btn">Save</button>
+          <button type="button" class="cancel-btn" id="cancelButton">Cancel</button>
         </form>
-
       </div>
-
     </section>
-
   </main>
 
-
-  <!-- FOOTER -->
   <footer>
-
-    <p>
-      © 2026 Student Profile
-    </p>
-
+    <p>© 2026 Student Profile</p>
   </footer>
 
-
-  <!-- =========================
-       JAVASCRIPT
-       ========================= -->
   <script>
-
-    /* LOCAL STORAGE KEY */
     const storageKey = "studentProfile";
 
-
-    /* DEFAULT PROFILE */
     const defaultProfile = {
-
       fullName: "KYLE KIRBY M. NGO",
-
       course: "BS Information Technology",
-
-      yearLevel: "3rd Year",
-
-      about:
-        "I am a motivated student who enjoys learning technology and building creative projects. I am interested in web development, programming, and other technology-related activities.",
-
-      skills: [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ]
-
+      yearLevel: "3th Year",
+      about: "I am a motivated student who enjoys learning technology and building creative projects and other stuff that about tech and something personal wants.",
+      skills: ["HTML", "CSS", "JavaScript"]
     };
 
-
-    /* PROFILE DATA */
     let profileData;
 
-
-    /* =========================
-       LOAD PROFILE
-       ========================= */
     function loadProfile() {
-
-      const savedProfile =
-        localStorage.getItem(storageKey);
-
+      const savedProfile = localStorage.getItem(storageKey);
 
       if (savedProfile) {
-
-        profileData =
-          JSON.parse(savedProfile);
-
+        profileData = JSON.parse(savedProfile);
       } else {
-
-        profileData =
-          defaultProfile;
-
+        profileData = defaultProfile;
       }
-
 
       displayProfile();
-
     }
 
-
-    /* =========================
-       DISPLAY PROFILE
-       ========================= */
     function displayProfile() {
+      document.getElementById("displayName").textContent = profileData.fullName;
+      document.getElementById("displayCourse").textContent = profileData.course;
+      document.getElementById("displayYear").textContent = profileData.yearLevel;
+      document.getElementById("displayAbout").textContent = profileData.about;
 
-      document.getElementById(
-        "displayName"
-      ).textContent =
-        profileData.fullName;
-
-
-      document.getElementById(
-        "displayCourse"
-      ).textContent =
-        profileData.course;
-
-
-      document.getElementById(
-        "displayYear"
-      ).textContent =
-        profileData.yearLevel;
-
-
-      document.getElementById(
-        "displayAbout"
-      ).textContent =
-        profileData.about;
-
-
-      /* DISPLAY SKILLS */
-
-      const skillsContainer =
-        document.getElementById(
-          "displaySkills"
-        );
-
-
+      const skillsContainer = document.getElementById("displaySkills");
       skillsContainer.innerHTML = "";
 
-
-      profileData.skills.forEach(
-        skill => {
-
-          const skillElement =
-            document.createElement(
-              "span"
-            );
-
-
-          skillElement.className =
-            "skill";
-
-
-          skillElement.textContent =
-            skill;
-
-
-          skillsContainer.appendChild(
-            skillElement
-          );
-
-        }
-      );
-
+      profileData.skills.forEach(skill => {
+        const skillElement = document.createElement("span");
+        skillElement.className = "skill";
+        skillElement.textContent = skill;
+        skillsContainer.appendChild(skillElement);
+      });
     }
 
-
-    /* =========================
-       SHOW EDIT FORM
-       ========================= */
     function showEditForm() {
+      document.getElementById("fullName").value = profileData.fullName;
+      document.getElementById("course").value = profileData.course;
+      document.getElementById("yearLevel").value = profileData.yearLevel;
+      document.getElementById("about").value = profileData.about;
+      document.getElementById("skills").value = profileData.skills.join(", ");
 
-      document.getElementById(
-        "fullName"
-      ).value =
-        profileData.fullName;
-
-
-      document.getElementById(
-        "course"
-      ).value =
-        profileData.course;
-
-
-      document.getElementById(
-        "yearLevel"
-      ).value =
-        profileData.yearLevel;
-
-
-      document.getElementById(
-        "about"
-      ).value =
-        profileData.about;
-
-
-      document.getElementById(
-        "skills"
-      ).value =
-        profileData.skills.join(", ");
-
-
-      document.getElementById(
-        "errorMessage"
-      ).classList.add("hidden");
-
-
-      document.getElementById(
-        "profileView"
-      ).classList.add("hidden");
-
-
-      document.getElementById(
-        "editView"
-      ).classList.remove("hidden");
-
+      document.getElementById("errorMessage").classList.add("hidden");
+      document.getElementById("profileView").classList.add("hidden");
+      document.getElementById("editView").classList.remove("hidden");
     }
 
-
-    /* =========================
-       CLOSE EDIT FORM
-       ========================= */
     function closeEditForm() {
-
-      document.getElementById(
-        "editView"
-      ).classList.add("hidden");
-
-
-      document.getElementById(
-        "profileView"
-      ).classList.remove("hidden");
-
+      document.getElementById("editView").classList.add("hidden");
+      document.getElementById("profileView").classList.remove("hidden");
     }
 
+    document.getElementById("editButton").addEventListener("click", showEditForm);
 
-    /* =========================
-       EDIT BUTTON
-       ========================= */
-    document.getElementById(
-      "editButton"
-    ).addEventListener(
-      "click",
-      showEditForm
-    );
+    document.getElementById("cancelButton").addEventListener("click", () => {
+      // No data is saved when Cancel is selected
+      closeEditForm();
+    });
 
+    document.getElementById("profileForm").addEventListener("submit", function(event) {
+      event.preventDefault();
 
-    /* =========================
-       CANCEL BUTTON
-       ========================= */
-    document.getElementById(
-      "cancelButton"
-    ).addEventListener(
-      "click",
-      () => {
+      const fullName = document.getElementById("fullName").value.trim();
+      const course = document.getElementById("course").value.trim();
+      const yearLevel = document.getElementById("yearLevel").value.trim();
+      const about = document.getElementById("about").value.trim();
+      const skillsInput = document.getElementById("skills").value.trim();
 
-        /* Cancel does NOT save changes */
+      const errorMessage = document.getElementById("errorMessage");
 
-        closeEditForm();
-
+      // JavaScript validation
+      if (!fullName || !course || !yearLevel || !about) {
+        errorMessage.textContent = "Please complete all required fields.";
+        errorMessage.classList.remove("hidden");
+        return;
       }
-    );
 
+      const skillsArray = skillsInput
+        ? skillsInput.split(",").map(skill => skill.trim()).filter(skill => skill !== "")
+        : [];
 
-    /* =========================
-       FORM SUBMISSION
-       ========================= */
-    document.getElementById(
-      "profileForm"
-    ).addEventListener(
-      "submit",
-      function(event) {
+      // Save updated profile to localStorage
+      profileData = {
+        fullName: fullName,
+        course: course,
+        yearLevel: yearLevel,
+        about: about,
+        skills: skillsArray
+      };
 
-        /* Prevent page reload */
-        event.preventDefault();
+      localStorage.setItem(storageKey, JSON.stringify(profileData));
 
+      // Update profile immediately
+      displayProfile();
+      closeEditForm();
+    });
 
-        /* GET FORM VALUES */
-
-        const fullName =
-          document.getElementById(
-            "fullName"
-          ).value.trim();
-
-
-        const course =
-          document.getElementById(
-            "course"
-          ).value.trim();
-
-
-        const yearLevel =
-          document.getElementById(
-            "yearLevel"
-          ).value.trim();
-
-
-        const about =
-          document.getElementById(
-            "about"
-          ).value.trim();
-
-
-        const skillsInput =
-          document.getElementById(
-            "skills"
-          ).value.trim();
-
-
-        const errorMessage =
-          document.getElementById(
-            "errorMessage"
-          );
-
-
-        /* =========================
-           JAVASCRIPT VALIDATION
-           ========================= */
-
-        if (
-          !fullName ||
-          !course ||
-          !yearLevel ||
-          !about
-        ) {
-
-          errorMessage.textContent =
-            "Please complete all required fields.";
-
-
-          errorMessage.classList.remove(
-            "hidden"
-          );
-
-
-          return;
-
-        }
-
-
-        /* =========================
-           PROCESS SKILLS
-           ========================= */
-
-        const skillsArray =
-          skillsInput
-            ? skillsInput
-                .split(",")
-                .map(
-                  skill =>
-                    skill.trim()
-                )
-                .filter(
-                  skill =>
-                    skill !== ""
-                )
-            : [];
-
-
-        /* =========================
-           UPDATE PROFILE
-           ========================= */
-
-        profileData = {
-
-          fullName:
-            fullName,
-
-          course:
-            course,
-
-          yearLevel:
-            yearLevel,
-
-          about:
-            about,
-
-          skills:
-            skillsArray
-
-        };
-
-
-        /* =========================
-           SAVE TO LOCAL STORAGE
-           ========================= */
-
-        localStorage.setItem(
-          storageKey,
-          JSON.stringify(
-            profileData
-          )
-        );
-
-
-        /* =========================
-           UPDATE PROFILE
-           ========================= */
-
-        displayProfile();
-
-
-        /* CLOSE EDIT FORM */
-
-        closeEditForm();
-
-      }
-    );
-
-
-    /* =========================
-       START APPLICATION
-       ========================= */
-
+    // Retrieve saved data or show default profile on startup
     loadProfile();
-
   </script>
 
 </body>
