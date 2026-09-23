@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Student Profile</title>
 
   <style>
@@ -23,10 +22,6 @@
       color: white;
       padding: 20px 8%;
       text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
     }
 
     main {
@@ -49,6 +44,10 @@
       flex-wrap: wrap;
     }
 
+    .picture-section {
+      text-align: center;
+    }
+
     .profile-picture {
       width: 120px;
       height: 120px;
@@ -57,9 +56,7 @@
       border: 4px solid #2563eb;
     }
 
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       margin-top: 0;
     }
 
@@ -73,7 +70,6 @@
       color: #1e40af;
     }
 
-    /* SKILLS */
     .skills-list {
       display: flex;
       gap: 10px;
@@ -88,26 +84,6 @@
       font-weight: bold;
     }
 
-    /* PROJECTS */
-    .project {
-      background: #f8fafc;
-      border-left: 5px solid #2563eb;
-      padding: 16px;
-      margin-top: 15px;
-      border-radius: 8px;
-    }
-
-    .project h3 {
-      color: #1e40af;
-      margin-bottom: 8px;
-    }
-
-    .project p {
-      margin-bottom: 0;
-      line-height: 1.6;
-    }
-
-    /* BUTTONS */
     button {
       border: none;
       padding: 11px 18px;
@@ -118,13 +94,15 @@
     }
 
     .edit-btn,
-    .save-btn {
+    .save-btn,
+    .camera-btn {
       background: #2563eb;
       color: white;
     }
 
     .edit-btn:hover,
-    .save-btn:hover {
+    .save-btn:hover,
+    .camera-btn:hover {
       background: #1d4ed8;
     }
 
@@ -134,11 +112,6 @@
       margin-left: 8px;
     }
 
-    .cancel-btn:hover {
-      background: #d1d5db;
-    }
-
-    /* FORM */
     .hidden {
       display: none;
     }
@@ -172,94 +145,62 @@
       margin-bottom: 15px;
     }
 
+    .camera-message {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
     footer {
       text-align: center;
       padding: 15px;
       color: #64748b;
-    }
-
-    /* RESPONSIVE DESIGN */
-    @media (max-width: 768px) {
-      header {
-        padding: 18px 5%;
-      }
-
-      main {
-        width: 92%;
-        margin: 25px auto;
-      }
-
-      .card {
-        padding: 22px;
-      }
-
-      .profile-top {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .details {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 26px;
-      }
-
-      .card {
-        padding: 18px;
-      }
-
-      .profile-picture {
-        width: 100px;
-        height: 100px;
-      }
-
-      button {
-        width: 100%;
-        margin-top: 8px;
-      }
-
-      .cancel-btn {
-        margin-left: 0;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
   <header>
     <h1>Student Profile</h1>
   </header>
 
-
   <main>
 
-    <!-- =========================
-         PROFILE VIEW
-         ========================= -->
+    <!-- PROFILE VIEW -->
     <section id="profileView">
 
-      <!-- PROFILE -->
       <div class="card">
 
         <div class="profile-top">
 
-          <img
-            src="img/ngo.jpg"
-            alt="Student Profile Picture"
-            class="profile-picture"
-          />
+          <div class="picture-section">
+
+         <img
+             id="profilePicture"
+             src="img/ngo.jpg" alt="Profile Picture" class="profile-picture">
+         
+            
+
+
+            <br /><br />
+
+            <button
+              type="button"
+              class="camera-btn"
+              id="changePictureBtn">
+              Change Profile Picture
+            </button>
+
+            <p
+              id="cameraMessage"
+              class="camera-message">
+            </p>
+
+          </div>
 
           <div class="details">
 
-            <h2 id="displayName">
-              Your Name
-            </h2>
+            <h2 id="displayName">Your Name</h2>
 
             <p>
               <span class="label">Course:</span>
@@ -279,8 +220,7 @@
 
         <button
           class="edit-btn"
-          id="editButton"
-        >
+          id="editButton">
           Edit Profile
         </button>
 
@@ -304,43 +244,7 @@
 
         <div
           class="skills-list"
-          id="displaySkills"
-        ></div>
-
-      </div>
-
-
-      <!-- =========================
-           PROJECTS
-           ========================= -->
-      <div class="card">
-
-        <h2>Projects</h2>
-
-        <div class="project">
-
-          <h3>Student Profile Application</h3>
-
-          <p>
-            A Cordova-based Student Profile application that
-            allows users to view and edit student information.
-            The application uses HTML, CSS, JavaScript, and
-            localStorage.
-          </p>
-
-        </div>
-
-
-        <div class="project">
-
-          <h3>Personal Portfolio</h3>
-
-          <p>
-            A responsive portfolio project showcasing my
-            skills, projects, personal information, and
-            interests in technology.
-          </p>
-
+          id="displaySkills">
         </div>
 
       </div>
@@ -351,28 +255,19 @@
 
         <h2>Contact</h2>
 
-        <p>
-          <strong>Email:</strong>
-          student@email.com
-        </p>
+        <p>Email: kylekirbyngo@email.com</p>
 
-        <p>
-          <strong>Phone:</strong>
-          +63 912 345 6789
-        </p>
+        <p>Phone: +63 961 964 015</p>
 
       </div>
 
     </section>
 
 
-    <!-- =========================
-         EDIT PROFILE FORM
-         ========================= -->
+    <!-- EDIT PROFILE FORM -->
     <section
       id="editView"
-      class="hidden"
-    >
+      class="hidden">
 
       <div class="card">
 
@@ -380,13 +275,11 @@
 
         <p
           id="errorMessage"
-          class="error-message hidden"
-        ></p>
-
+          class="error-message hidden">
+        </p>
 
         <form id="profileForm">
 
-          <!-- FULL NAME -->
           <label for="fullName">
             Full Name
           </label>
@@ -397,7 +290,6 @@
           />
 
 
-          <!-- COURSE -->
           <label for="course">
             Course
           </label>
@@ -408,7 +300,6 @@
           />
 
 
-          <!-- YEAR LEVEL -->
           <label for="yearLevel">
             Year Level
           </label>
@@ -419,17 +310,13 @@
           />
 
 
-          <!-- ABOUT -->
           <label for="about">
             About Me
           </label>
 
-          <textarea
-            id="about"
-          ></textarea>
+          <textarea id="about"></textarea>
 
 
-          <!-- SKILLS -->
           <label for="skills">
             Skills
             <small>
@@ -443,26 +330,18 @@
             placeholder="Example: HTML, CSS, JavaScript"
           />
 
+          <br /><br />
 
-          <br />
-          <br />
-
-
-          <!-- SAVE -->
           <button
             type="submit"
-            class="save-btn"
-          >
+            class="save-btn">
             Save
           </button>
 
-
-          <!-- CANCEL -->
           <button
             type="button"
             class="cancel-btn"
-            id="cancelButton"
-          >
+            id="cancelButton">
             Cancel
           </button>
 
@@ -475,36 +354,29 @@
   </main>
 
 
-  <!-- FOOTER -->
   <footer>
 
-    <p>
-      © 2026 Student Profile
-    </p>
+    <p>© 2026 Student Profile</p>
 
   </footer>
 
 
-  <!-- =========================
-       JAVASCRIPT
-       ========================= -->
   <script>
 
-    /* LOCAL STORAGE KEY */
     const storageKey = "studentProfile";
 
 
-    /* DEFAULT PROFILE */
     const defaultProfile = {
+
+      profileImage: "img/ngo.jpg",
 
       fullName: "KYLE KIRBY M. NGO",
 
       course: "BS Information Technology",
 
-      yearLevel: "3rd Year",
+      yearLevel: "3th Year",
 
-      about:
-        "I am a motivated student who enjoys learning technology and building creative projects. I am interested in web development, programming, and other technology-related activities.",
+      about: "I am a motivated student who enjoys learning technology and building creative projects and other stuff that about tech and something personal wants.",
 
       skills: [
         "HTML",
@@ -515,13 +387,9 @@
     };
 
 
-    /* PROFILE DATA */
     let profileData;
 
 
-    /* =========================
-       LOAD PROFILE
-       ========================= */
     function loadProfile() {
 
       const savedProfile =
@@ -530,13 +398,34 @@
 
       if (savedProfile) {
 
-        profileData =
-          JSON.parse(savedProfile);
+        try {
+
+          profileData =
+            JSON.parse(savedProfile);
+
+        } catch (error) {
+
+          profileData = {
+            ...defaultProfile,
+            skills: [...defaultProfile.skills]
+          };
+
+        }
 
       } else {
 
-        profileData =
-          defaultProfile;
+        profileData = {
+          ...defaultProfile,
+          skills: [...defaultProfile.skills]
+        };
+
+      }
+
+
+      if (!profileData.profileImage) {
+
+        profileData.profileImage =
+          "img/ngo.jpg";
 
       }
 
@@ -546,10 +435,14 @@
     }
 
 
-    /* =========================
-       DISPLAY PROFILE
-       ========================= */
     function displayProfile() {
+
+      document.getElementById(
+        "profilePicture"
+      ).src =
+        profileData.profileImage ||
+        "img/ngo.jpg";
+
 
       document.getElementById(
         "displayName"
@@ -575,8 +468,6 @@
         profileData.about;
 
 
-      /* DISPLAY SKILLS */
-
       const skillsContainer =
         document.getElementById(
           "displaySkills"
@@ -590,18 +481,13 @@
         skill => {
 
           const skillElement =
-            document.createElement(
-              "span"
-            );
-
+            document.createElement("span");
 
           skillElement.className =
             "skill";
 
-
           skillElement.textContent =
             skill;
-
 
           skillsContainer.appendChild(
             skillElement
@@ -613,9 +499,6 @@
     }
 
 
-    /* =========================
-       SHOW EDIT FORM
-       ========================= */
     function showEditForm() {
 
       document.getElementById(
@@ -665,9 +548,6 @@
     }
 
 
-    /* =========================
-       CLOSE EDIT FORM
-       ========================= */
     function closeEditForm() {
 
       document.getElementById(
@@ -682,185 +562,318 @@
     }
 
 
-    /* =========================
-       EDIT BUTTON
-       ========================= */
-    document.getElementById(
-      "editButton"
-    ).addEventListener(
-      "click",
-      showEditForm
-    );
+    document
+      .getElementById("editButton")
+      .addEventListener(
+        "click",
+        showEditForm
+      );
 
 
-    /* =========================
-       CANCEL BUTTON
-       ========================= */
-    document.getElementById(
-      "cancelButton"
-    ).addEventListener(
-      "click",
-      () => {
+    document
+      .getElementById("cancelButton")
+      .addEventListener(
+        "click",
+        () => {
 
-        /* Cancel does NOT save changes */
+          closeEditForm();
 
-        closeEditForm();
+        }
+      );
+
+
+    document
+      .getElementById("profileForm")
+      .addEventListener(
+        "submit",
+        function(event) {
+
+          event.preventDefault();
+
+
+          const fullName =
+            document
+              .getElementById("fullName")
+              .value
+              .trim();
+
+
+          const course =
+            document
+              .getElementById("course")
+              .value
+              .trim();
+
+
+          const yearLevel =
+            document
+              .getElementById("yearLevel")
+              .value
+              .trim();
+
+
+          const about =
+            document
+              .getElementById("about")
+              .value
+              .trim();
+
+
+          const skillsInput =
+            document
+              .getElementById("skills")
+              .value
+              .trim();
+
+
+          const errorMessage =
+            document.getElementById(
+              "errorMessage"
+            );
+
+
+          if (
+            !fullName ||
+            !course ||
+            !yearLevel ||
+            !about
+          ) {
+
+            errorMessage.textContent =
+              "Please complete all required fields.";
+
+            errorMessage.classList.remove(
+              "hidden"
+            );
+
+            return;
+
+          }
+
+
+          const skillsArray =
+            skillsInput
+              ? skillsInput
+                  .split(",")
+                  .map(
+                    skill =>
+                      skill.trim()
+                  )
+                  .filter(
+                    skill =>
+                      skill !== ""
+                  )
+              : [];
+
+
+          profileData = {
+
+            profileImage:
+              profileData.profileImage ||
+              "img/ngo.jpg",
+
+            fullName:
+              fullName,
+
+            course:
+              course,
+
+            yearLevel:
+              yearLevel,
+
+            about:
+              about,
+
+            skills:
+              skillsArray
+
+          };
+
+
+          localStorage.setItem(
+            storageKey,
+            JSON.stringify(profileData)
+          );
+
+
+          displayProfile();
+
+          closeEditForm();
+
+        }
+      );
+
+
+    /* CAMERA FUNCTION */
+
+    function openCamera() {
+
+      if (
+        typeof navigator.camera ===
+        "undefined"
+      ) {
+
+        showCameraError(
+          "Unable to access the camera. Please check your device permissions."
+        );
+
+        return;
 
       }
-    );
 
 
-    /* =========================
-       FORM SUBMISSION
-       ========================= */
-    document.getElementById(
-      "profileForm"
-    ).addEventListener(
-      "submit",
-      function(event) {
+      navigator.camera.getPicture(
 
-        /* Prevent page reload */
-        event.preventDefault();
+        function(imageData) {
+
+          const imageURL =
+            "data:image/jpeg;base64," +
+            imageData;
 
 
-        /* GET FORM VALUES */
-
-        const fullName =
           document.getElementById(
-            "fullName"
-          ).value.trim();
+            "profilePicture"
+          ).src =
+            imageURL;
 
 
-        const course =
-          document.getElementById(
-            "course"
-          ).value.trim();
+          profileData.profileImage =
+            imageURL;
 
 
-        const yearLevel =
-          document.getElementById(
-            "yearLevel"
-          ).value.trim();
+          try {
+
+            localStorage.setItem(
+              storageKey,
+              JSON.stringify(profileData)
+            );
 
 
-        const about =
-          document.getElementById(
-            "about"
-          ).value.trim();
+            const cameraMessage =
+              document.getElementById(
+                "cameraMessage"
+              );
 
 
-        const skillsInput =
-          document.getElementById(
-            "skills"
-          ).value.trim();
+            cameraMessage.textContent =
+              "Profile picture updated successfully.";
 
 
-        const errorMessage =
-          document.getElementById(
-            "errorMessage"
+            cameraMessage.style.color =
+              "#166534";
+
+
+          } catch (error) {
+
+            showCameraError(
+              "The picture was captured but could not be saved."
+            );
+
+          }
+
+        },
+
+
+        function(message) {
+
+          /*
+           * User cancelled the camera.
+           * Keep the existing picture.
+           */
+          if (
+            message &&
+            message
+              .toLowerCase()
+              .includes("cancel")
+          ) {
+
+            return;
+
+          }
+
+
+          showCameraError(
+            "Unable to access the camera. Please check your device permissions."
           );
 
-
-        /* =========================
-           JAVASCRIPT VALIDATION
-           ========================= */
-
-        if (
-          !fullName ||
-          !course ||
-          !yearLevel ||
-          !about
-        ) {
-
-          errorMessage.textContent =
-            "Please complete all required fields.";
+        },
 
 
-          errorMessage.classList.remove(
-            "hidden"
-          );
+        {
 
+          quality: 60,
 
-          return;
+          destinationType:
+            Camera.DestinationType.DATA_URL,
+
+          encodingType:
+            Camera.EncodingType.JPEG,
+
+          mediaType:
+            Camera.MediaType.PICTURE,
+
+          correctOrientation:
+            true,
+
+          saveToPhotoAlbum:
+            false
 
         }
 
+      );
 
-        /* =========================
-           PROCESS SKILLS
-           ========================= */
-
-        const skillsArray =
-          skillsInput
-            ? skillsInput
-                .split(",")
-                .map(
-                  skill =>
-                    skill.trim()
-                )
-                .filter(
-                  skill =>
-                    skill !== ""
-                )
-            : [];
+    }
 
 
-        /* =========================
-           UPDATE PROFILE
-           ========================= */
+    function showCameraError(message) {
 
-        profileData = {
-
-          fullName:
-            fullName,
-
-          course:
-            course,
-
-          yearLevel:
-            yearLevel,
-
-          about:
-            about,
-
-          skills:
-            skillsArray
-
-        };
-
-
-        /* =========================
-           SAVE TO LOCAL STORAGE
-           ========================= */
-
-        localStorage.setItem(
-          storageKey,
-          JSON.stringify(
-            profileData
-          )
+      const cameraMessage =
+        document.getElementById(
+          "cameraMessage"
         );
 
 
-        /* =========================
-           UPDATE PROFILE
-           ========================= */
-
-        displayProfile();
+      cameraMessage.textContent =
+        message;
 
 
-        /* CLOSE EDIT FORM */
+      cameraMessage.style.color =
+        "#b91c1c";
 
-        closeEditForm();
+    }
 
-      }
+
+    document
+      .getElementById("changePictureBtn")
+      .addEventListener(
+        "click",
+        openCamera
+      );
+
+
+    document.addEventListener(
+      "deviceready",
+      function() {
+
+        loadProfile();
+
+      },
+      false
     );
 
 
-    /* =========================
-       START APPLICATION
-       ========================= */
+    /*
+     * Allows Activity 5 to display
+     * when opened directly in browser.
+     */
+    if (
+      typeof window.cordova ===
+      "undefined"
+    ) {
 
-    loadProfile();
+      loadProfile();
+
+    }
 
   </script>
 
