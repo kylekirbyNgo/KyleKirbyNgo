@@ -1,6 +1,6 @@
 {
-  "name": "com.example.kyleproject",
-  "displayName": "KyleProject",
+  "name": "com.example.ongproject",
+  "displayName": "Ong Project",
   "version": "1.0.0",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
@@ -12,12 +12,16 @@
   ],
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^15.1.0",
+    "cordova-plugin-camera": "^8.0.0"
+  },
   "cordova": {
+    "plugins": {
+      "cordova-plugin-camera": {}
+    },
     "platforms": [
       "android"
     ]
-  },
-  "devDependencies": {
-    "cordova-android": "^15.1.0"
   }
 }
