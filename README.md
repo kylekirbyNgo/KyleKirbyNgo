@@ -215,3 +215,5 @@ If the camera permission is declined or the camera capture function is canceled,
 <img width="1075" height="528" alt="Screenshot 2026-09-23 214144" src="https://github.com/user-attachments/assets/e5f65f6b-30b6-4b04-8fed-9a2879259eb1" />
 <img width="1287" height="1007" alt="Screenshot 2026-09-23 214315" src="https://github.com/user-attachments/assets/13c28b27-9471-4a6a-9631-729cb492bde1" />
 <img width="1293" height="1007" alt="Screenshot 2026-09-23 214308" src="https://github.com/user-attachments/assets/d27b5124-7af3-42fc-83e8-b7ba86123d80" />
+<img width="1056" height="483" alt="image" src="https://github.com/user-attachments/assets/228b47e8-0ea9-4b36-9e75-576f4245f0a9" />
+
